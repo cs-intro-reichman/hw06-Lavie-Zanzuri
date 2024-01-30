@@ -106,8 +106,6 @@ public class ImageProcessingTester {
 
     private static void testBlend(String filename1, String filename2) {
         // Read two images from the files
-        filename1 = filename1.add("ppm");
-        filename2 = filename2.add("ppm");
         Color[][] sampleImage1 = Runigram.read(filename1);
         Color[][] sampleImage2 = Runigram.read(filename2);
         sampleImage1 = Runigram.scaled(sampleImage1, 200, 200);
