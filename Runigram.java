@@ -201,7 +201,7 @@ public class Runigram {
 	 */
 	public static void morph(Color[][] source, Color[][] target, int n) {
 		//// Replace this comment with your code
-		if(source[0].length != target.length[o] || source.length != target.length){
+		if(source[0].length != target.length[0] || source.length != target.length){
 			target  = scaled (target,source[0].length,source.length);
 		}
 		double alpha ;
