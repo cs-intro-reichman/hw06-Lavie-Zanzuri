@@ -85,8 +85,8 @@ public class Runigram {
 		//// Replace the following statement with your code
 		Color [][] newImage = new Color [image.length][image[0].length];
 		for(int i = 0 ; i < image.length ; i ++) {
-			for (int j = 1 ; j < image[0].length ; j ++) {
-				newImage[i][j-1] = image[i][image[0].length - j];
+			for (int j = 0 ; j < image[0].length ; j ++) {
+				newImage[i][j] = image[i][image[0].length - 1 - j];
 			}
 		}
 		return newImage;
@@ -98,9 +98,9 @@ public class Runigram {
 	public static Color[][] flippedVertically(Color[][] image){
 		//// Replace the following statement with your code
 		Color [][] newImage = new Color [image.length][image[0].length];
-		for(int i = 1 ; i < image.length ; i ++) {
+		for(int i = 0 ; i < image.length ; i ++) {
 			for (int j = 0 ; j < image[0].length ; j ++) {
-				newImage[i-1][j] = image[image.length - i][j];
+				newImage[i][j] = image[image.length - 1 - i][j];
 			}
 		}
 		return newImage;
@@ -208,7 +208,7 @@ public class Runigram {
     	}
     	double alpha;
     	for (int i = 0; i <= n; i++) {
-       	 	double alpha = (double) ((double)(n-i)/ (double) n);
+       	 	alpha = (double) ((double) (n - i) / n);
         	Color[][] morphedImage = new Color[source.length][source[0].length];
         	for (int row = 0; row < source.length; row++) {
             	for (int col = 0; col < source[0].length; col++) {
@@ -249,5 +249,4 @@ public class Runigram {
 		StdDraw.show();
 	}
 }
-
 
