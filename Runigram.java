@@ -207,7 +207,7 @@ public class Runigram {
         target = scaled(target, source[0].length, source.length);
     	}
     	double alpha;
-    	for (int i = 1; i <= n; i++) {
+    	for (int i = 0; i <= n; i++) {
        	 	alpha = (double) ((double) (n - i) / n);
         	Color[][] morphedImage = new Color[source.length][source[0].length];
         	for (int row = 0; row < source.length; row++) {
