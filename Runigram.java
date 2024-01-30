@@ -48,7 +48,7 @@ public class Runigram {
 				 red = in.readInt();
 				 green = in.readInt();
 				 blue = in.readInt();
-				image[i][j] = new Color (red,green,blue);
+				image[i][j] = new Color(red,green,blue);
 			}
 		}
 		return image;
@@ -145,10 +145,11 @@ public class Runigram {
 		double scaledWidth =  ((double) sourceWidth / width);
 		double scaledHeight = ((double) sourceHeight / height);
 		Color[][] scaledImage = new Color[height][width];
+		int row , column ;
 		for(int i = 0 ; i < height ; i ++) {
 			for (int j = 0 ; j < width ; j ++) {
-				int row = (int) (i * scaledHeight);
-				int column = (int) (j * scaledWidth);
+				 row = (int) (i * scaledHeight);
+				 column = (int) (j * scaledWidth);
 				scaledImage [i][j] = image [row][column];
 			}
 		}
