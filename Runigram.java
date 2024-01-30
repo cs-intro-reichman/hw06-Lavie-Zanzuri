@@ -42,11 +42,12 @@ public class Runigram {
 		// creates from the 3 colors a new Color object, and 
 		// makes pixel (i,j) refer to that object.
 		//// Replace the following statement with your code.
+		int red,green,blue;
 		for(int i = 0 ; i < numRows ; i ++) {
 			for (int j = 0 ; j < numCols ; j ++) {
-				int red = in.readInt();
-				int green = in.readInt();
-				int blue = in.readInt();
+				 red = in.readInt();
+				 green = in.readInt();
+				 blue = in.readInt();
 				image[i][j] = new Color (red,green,blue);
 			}
 		}
@@ -200,31 +201,23 @@ public class Runigram {
 	 * of the source image.
 	 */
 	public static void morph(Color[][] source, Color[][] target, int n) {
-	//// Replace this comment with your code
-		int sourcerowsize = source.length; //all of this elements not really neccesery but its make the code more readable
-		int sourcecolsize = source[0].length;
-		int targetrowsize = target.length;
-		int targetcolsize = target[0].length;
-		Color[][] result = new Color[sourcerowsize][sourcecolsize];
-		Color[][] targetscaled = new Color[sourcerowsize][sourcecolsize];
-		if((sourcerowsize != targetrowsize) || (sourcecolsize != targetcolsize)) //fix the scales if the images dont have the same dimensions 
-		{
-				targetscaled = scaled(target, sourcecolsize, sourcerowsize);
-		}
-		else{
-			targetscaled = target;
-		}
-		for(int k = 0 ; k <= n ; k++)
-		{
-			double alpha = (double) ((double)(n-k)/ (double) n); //set the alpha for this part of blending
-			result = blend(source, targetscaled, alpha);
-			Runigram.setCanvas(result);
-			Runigram.display(result);
-			StdDraw.pause(500);
-
-		}
+		//// Replace this comment with your code
+		if (source[0].length != target[0].length || source.length != target.length) {
+        target = scaled(target, source[0].length, source.length);
+    	}
+    	double alpha;
+    	for (int i = 1; i <= n; i++) {
+       	 	alpha = (double) ((double) (n - i) / n);
+        	Color[][] morphedImage = new Color[source.length][source[0].length];
+        	for (int row = 0; row < source.length; row++) {
+            	for (int col = 0; col < source[0].length; col++) {
+                	morphedImage[row][col] = blend(source[row][col], target[row][col], alpha);
+            	}
+        	}
+       		display(morphedImage);
+    	}
 	}
-	
+		
 	/** Creates a canvas for the given image. */
 	public static void setCanvas(Color[][] image) {
 		StdDraw.setTitle("Runigram 2023");
