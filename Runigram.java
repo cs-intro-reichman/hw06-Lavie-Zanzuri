@@ -199,25 +199,22 @@ public class Runigram {
 	 * Before starting the process, scales the target image to the dimensions
 	 * of the source image.
 	 */
-	public static void morph(Color[][] source, Color[][] target, int n) {
-		//// Replace this comment with your code
-		if(source[0].length != target.length[0] || source.length != target.length){
-			target  = scaled (target,source[0].length,source.length);
-		}
-		double alpha ;
-		for(int i = 1 ; i <= n ; i++) {
-			alpha = (double) ((double)(n - i)/n);
-        	Color[][] morphedImage = new Color[source.length][source[0].length];
-        	for (int row = 0; row < source.length; row++) {
-            	for (int col = 0; col < source[0].length; col++) {
-                	morphedImage[row][col] = blend(source[row][col], target[row][col], alpha);
-            	}
-       		}
-        Runigram.setCanvas(morphedImage);
-			Runigram.display(morphedImage);
-			StdDraw.pause(500);
-		}
-	}
+	 public static void morph(Color[][] source, Color[][] target, int n) {
+        if (source[0].length != target[0].length || source.length != target.length) {
+            target = scaled(target, source[0].length, source.length);
+        }
+        double alpha;
+        for (int i = 1; i <= n; i++) {
+            alpha = (double) ((double) (n - i) / n);
+            Color[][] morphedImage = new Color[source.length][source[0].length];
+            for (int row = 0; row < source.length; row++) {
+                for (int col = 0; col < source[0].length; col++) {
+                    morphedImage[row][col] = blend(source[row][col], target[row][col], alpha);
+                }
+            }
+            display(morphedImage);
+        }
+    }
 	
 	/** Creates a canvas for the given image. */
 	public static void setCanvas(Color[][] image) {
