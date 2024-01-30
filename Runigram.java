@@ -18,8 +18,8 @@ public class Runigram {
 		Color[][] imageOut;
 
 		// Tests the horizontal flipping of an image:
-		imageOut = flippedHorizontally(tinypic);
-		System.out.println();
+		imageOut = flippedHorizontally(tinypic,800,500);
+		System.out.println("scaled 800 500: ");
 		print(imageOut);
 		
 		//// Write here whatever code you need in order to test your work.
