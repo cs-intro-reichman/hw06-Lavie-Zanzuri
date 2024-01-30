@@ -202,9 +202,9 @@ public class Runigram {
 	public static void morph(Color[][] source, Color[][] target, int n) {
 	//// Replace this comment with your code
 		int sourcerowsize = source.length; //all of this elements not really neccesery but its make the code more readable
-		int sourcecolsize = source[1].length;
+		int sourcecolsize = source[0].length;
 		int targetrowsize = target.length;
-		int targetcolsize = target[1].length;
+		int targetcolsize = target[0].length;
 		Color[][] result = new Color[sourcerowsize][sourcecolsize];
 		Color[][] targetscaled = new Color[sourcerowsize][sourcecolsize];
 		if((sourcerowsize != targetrowsize) || (sourcecolsize != targetcolsize)) //fix the scales if the images dont have the same dimensions 
