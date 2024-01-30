@@ -213,7 +213,9 @@ public class Runigram {
                 	morphedImage[row][col] = blend(source[row][col], target[row][col], alpha);
             	}
        		}
-        display(morphedImage);
+        Runigram.setCanvas(morphedImage);
+			Runigram.display(morphedImage);
+			StdDraw.pause(500);
 		}
 	}
 	
