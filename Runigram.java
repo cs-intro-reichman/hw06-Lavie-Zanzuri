@@ -208,7 +208,7 @@ public class Runigram {
     	}
     	double alpha;
     	for (int i = 0; i <= n; i++) {
-       	 	alpha = (double) ((double) (n - i) / n);
+       	 	double alpha = (double) ((double)(n-i)/ (double) n);
         	Color[][] morphedImage = new Color[source.length][source[0].length];
         	for (int row = 0; row < source.length; row++) {
             	for (int col = 0; col < source[0].length; col++) {
